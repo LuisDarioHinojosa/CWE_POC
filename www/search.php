@@ -37,7 +37,7 @@ if(isset($_POST["id_submit"])){
     <?php
     echo "<h3>Your user id is :" . $_SESSION["user_id"] . "</h3>";
     ?>
-    <h2>Get you information:</h2>
+    <h2>Get your information:</h2>
     <form method = "post">
             <label>id:</label> <input type="text" name="id_submit" size="60"/></p>
             <input type="submit" value="Get">
@@ -51,10 +51,20 @@ if(isset($_POST["id_submit"])){
         $sql = "SELECT * FROM users WHERE user_id = '$query_id'";
         //echo $sql;
         $stmt = $pdo->query($sql);
+        echo "<table border='1'>"."\n";
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            echo $row["name"] . " " . $row["username"] . " " . $row["user_id"] . " " .$row["password"];
+            echo "<tr><td>";
+            echo $row["name"];
+            echo "</td><td>";
+            echo $row["username"];
+            echo "</td><td>";
+            echo $row["user_id"];
+            echo "</td><td>";
+            echo $row["password"];
+            echo "</td></tr>\n";
             echo "<br/>";
-        }            
+        }
+        echo "</table>\n";            
         
       }
     
