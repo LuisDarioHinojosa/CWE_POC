@@ -11,6 +11,4 @@ create table users(user_id int unsigned not null auto_increment,name varchar(50)
 insert into users(name,username,password) values ("name1","mail1","password1");
 insert into users(name,username,password) values ("name2","mail2","password2");
 ...
-...
 
-```
